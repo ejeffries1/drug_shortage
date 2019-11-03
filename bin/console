@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "./lib/drug_shortage/drug_scraper"
 require "drug_shortage"
 
 # You can add fixtures and/or initialization code here to make experimenting
@@ -9,6 +10,8 @@ require "drug_shortage"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+require "pry"
+Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+#require "irb"
+#IRB.start(__FILE__)

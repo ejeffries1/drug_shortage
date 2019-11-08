@@ -9,12 +9,15 @@ class Drug
   @@date = []
   def self.current
     @doc = Nokogiri::HTML(open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=CurrentShortages&sort=2"))
-      @doc.css("table").each do |tag|
-         @@newdrug << name = tag.css("tbody").text.strip
+      @doc.css(".table").each do |tag|
+         Drug.name = tag.css(".odd").text.strip
          @@date << availability = tag.css(".right").text
-    binding.pry
     end
+    @@newdrug << Drug.name
   end
-  @@current
-  @@date
+
+  def self.cli_attach
+    @@newdrug
+    binding.pry
+  end
 end

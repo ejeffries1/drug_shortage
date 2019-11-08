@@ -12,6 +12,7 @@ class DrugShortage::CLI
     case input
     when "1"
       puts "Current Drug Shortages"
+      Drug.name
     when "2"
       puts "Resolved Drug Shortages"
     end

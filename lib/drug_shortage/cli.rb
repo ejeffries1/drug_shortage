@@ -2,7 +2,12 @@ class DrugShortage::CLI
 
   def call
     puts "Drug Shortages"
+    list
     menu
+  end
+
+  def list
+    print "Select 1 for a list of the Current Drug Shortages or 2 for the Resolved Drug Shortages."
   end
 
   def menu

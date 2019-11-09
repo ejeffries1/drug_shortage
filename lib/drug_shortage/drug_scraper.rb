@@ -5,21 +5,19 @@ class DrugShortage::DrugScraper
     puts "I'm working"
   end
 
-  @newdrug = []
-  @@date = []
+  
+  @@all = []
   def self.current
     @doc = Nokogiri::HTML(open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=CurrentShortages&sort=2"))
       @block = @doc.css("drug-shortage-container")
         @block.each do |tag|
          name = tag.css(".odd").text.strip
-         @newdrug << name
-         drug = Drug.new
-
+         @@all << name
     end
   end
 
   def self.attach
-    @newdrug
+    @@all
     binding.pry
   end
 end

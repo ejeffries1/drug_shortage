@@ -2,6 +2,7 @@ class DrugShortage::CLI
 
   def call
     puts "Drug Shortages"
+    @drug = DrugShortage::Drug.tester
     list
     menu
   end
@@ -14,12 +15,15 @@ class DrugShortage::CLI
     input = nil
     while input != "exit"
     input = gets.strip.downcase
-    case input
-    when "1"
+
+    if input.to_i>0
       puts "Current Drug Shortages"
-      Drug.name
-    when "2"
+      puts @drug[input.to_i-1]
+    elsif input == "2"
       puts "Resolved Drug Shortages"
+      @drug.drug_2
+    elsif input == "list"
+      list
     end
     end
   end

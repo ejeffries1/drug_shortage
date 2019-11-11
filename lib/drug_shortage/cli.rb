@@ -4,11 +4,12 @@ class DrugShortage::CLI
     puts "Drug Shortages"
     list
     menu
-    #@drug = DrugShortage::Drug.current_drug
   end
 
   def list
-    print "Select 1 for a list of the Current Drug Shortages or 2 for the Resolved Drug Shortages."
+    puts "Type 1 for a list of Current Drug Shortages"
+    puts "Type 2 for a list of Resolved Drug Shortages"
+    puts "Type exit to close the program"
   end
 
   def menu
@@ -18,9 +19,11 @@ class DrugShortage::CLI
     if input == "1"
       puts "Current Drug Shortages"
       puts "#{DrugShortage::Drug.current_drug}"
+      puts "Type list to view selections"
     elsif input == "2"
       puts "Resolved Drug Shortages"
-      return DrugShortage::Drug.resolved_drug
+      puts "#{DrugShortage::Drug.resolved_drug}"
+      puts "Type list to view selections"
     elsif input == "list"
       list
     end

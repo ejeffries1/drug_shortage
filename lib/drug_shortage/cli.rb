@@ -16,11 +16,11 @@ class DrugShortage::CLI
     while input != "exit"
     input = gets.strip.downcase
     if input == "1"
-      #puts "Current Drug Shortages"
-      print "#{DrugShortage::Drug.current_drug}"
-    elsif input == "1"
+      puts "Current Drug Shortages"
+      puts "#{DrugShortage::Drug.current_drug}"
+    elsif input == "2"
       puts "Resolved Drug Shortages"
-      @drug.drug_2
+      return DrugShortage::Drug.resolved_drug
     elsif input == "list"
       list
     end

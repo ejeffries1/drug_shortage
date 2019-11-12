@@ -12,15 +12,17 @@ gem 'drug_shortage'
 
 And then execute:
 
-    $ bundle
+    bundle install
 
 Or install it yourself as:
 
     $ gem install drug_shortage
 
 ## Usage
-
-
+Type 1 to view a list of Current Drug Shortages
+Type 2 to view a list of Resolved Drug Shortages
+Type list to view you selections
+Type exit to exit the program
 
 ## Development
 

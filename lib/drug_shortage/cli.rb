@@ -1,7 +1,7 @@
 class DrugShortage::CLI
 
   def call
-    puts "Drug Shortages"
+    puts "Hi! Welcome to Drug Shortages"
     list
     menu
   end

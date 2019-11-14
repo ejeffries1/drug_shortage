@@ -18,14 +18,20 @@ class DrugShortage::Drug
   def self.scrape_resolve
     @resolved = []
     doc = Nokogiri::HTML(open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=ResolvedShortages"))
-      doc.css(".drug-shortage-container").collect do |drug|
-        resolve = drug.css("tr.odd").text.gsub(/\s+/mu," ").strip
-        resolve
-        binding.pry
+      doc.css(".drug-shortage-container").each do |drug|
+        name = drug.css("tr.odd").text.gsub(/\s+/mu," ").strip
+        resolve = DrugShortage::Drug.new
+         @resolved << resolve.name
+         @resolved
+        #binding.pry
       end
   end
 
   def self.resolved_drug
-    self.scrape_resolve
+    self.scrape_resolve.each do |i|
+      i.children.text
+      #binding.pry
+    end
+
   end
 end
